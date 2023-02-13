@@ -28,3 +28,26 @@ showLessBtn.addEventListener('click', function() {
 
 tableWrapper.appendChild(table);
 tableWrapper.appendChild(tableButtons);
+
+
+// Add click event listeners to each image
+const images = table.getElementsByTagName('img');
+for (let i = 0; i < images.length; i++) {
+  images[i].addEventListener('click', function() {
+    // Update the popup content
+    const imageSrc = this.src;
+    const caption = this.alt;
+    popupImage.src = imageSrc;
+    popupCaption.textContent = caption;
+
+    // Show the popup
+    popup.style.display = 'block';
+  });
+}
+
+// Add click event listener to close the popup
+popup.addEventListener('click', function(event) {
+  if (event.target === this) {
+    this.style.display = 'none';
+  }
+});
