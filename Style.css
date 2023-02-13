@@ -1,30 +1,43 @@
-#table-container {
+#table-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
 }
 
 #my-table {
   width: 100%;
-  border-collapse: collapse;
+  max-width: 800px;
 }
 
-#my-table th, #my-table td {
-  border: 1px solid black;
-  padding: 8px;
+#table-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 800px;
 }
 
-caption {
-  text-align: center;
+#show-more,
+#show-less {
+  padding: 8px 16px;
+  border: none;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
-  #my-table {
-    font-size: 12px;
-  }
-  
-  #my-table td, #my-table th {
-    padding: 5px;
+#show-more:hover,
+#show-less:hover {
+  background-color: #3e8e41;
+}
+
+#show-more {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #table-buttons {
+    flex-direction: column;
+    align-items: center;
   }
 }
