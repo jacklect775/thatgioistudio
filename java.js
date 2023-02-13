@@ -2,6 +2,8 @@ const table = document.getElementById('my-table');
 const showMoreBtn = document.getElementById('show-more');
 const showLessBtn = document.getElementById('show-less');
 const numRows = table.rows.length;
+const tableWrapper = document.getElementById('table-wrapper');
+const tableButtons = document.getElementById('table-buttons');
 
 // Hide all rows after the 6th row
 for (let i = 6; i < numRows; i++) {
@@ -23,3 +25,6 @@ showLessBtn.addEventListener('click', function() {
   showMoreBtn.style.display = 'block';
   showLessBtn.style.display = 'none';
 });
+
+tableWrapper.appendChild(table);
+tableWrapper.appendChild(tableButtons);
